@@ -81,3 +81,43 @@ console.log('Colors: ', totalColors, 'Deleted: ', deletedItems)
 
 deletedItems = totalColors.splice(1, 4, 'I am not a color', 'many') // remove 4 elements and replace for other ones passed
 console.log('Colors: ', totalColors, 'Deleted: ', deletedItems)
+
+colors = ['red', 'blue', 'green', 'black', 'purple', 'gold']
+console.log(colors.indexOf('green'))
+
+var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+
+var someResult = numbers.some(function (item, index, array) {
+  return item > 2
+})
+
+console.log(someResult)
+
+var everyResult = numbers.every(function (item, index, array) {
+  return item > 2
+})
+
+console.log(everyResult)
+
+var filterResult = numbers.filter(function (item, index, array) {
+  return item > 2
+})
+
+console.log(filterResult)
+
+numbers.forEach(function (item, index, array) {
+  console.log(item)
+})
+
+var mapResult = numbers.map(function (item, index, array) {
+  return 'Num ' + item
+})
+
+console.log(mapResult)
+
+numbers = [1, 2, 3, 4, 5]
+
+var sum = numbers.reduce(function (prevValue, currentValue, index, array) {
+  return prevValue + currentValue
+})
+console.log(sum)
