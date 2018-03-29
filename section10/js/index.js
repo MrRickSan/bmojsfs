@@ -43,3 +43,18 @@ function factorial (num) {
   }
 }
 console.log(factorial(5))
+
+// 'this' is a reference to the execution context that the function
+// is operating on
+
+window.color = 'red'
+var obj = {color: 'blue'}
+
+function sayColor () {
+  console.log(this.color)
+}
+
+sayColor()
+
+obj.sayColor = sayColor
+obj.sayColor()
