@@ -58,3 +58,31 @@ sayColor()
 
 obj.sayColor = sayColor
 obj.sayColor()
+
+// Function Methods apply(), call(), bind()
+function sum (num1, num2) {
+  return num1 + num2
+}
+
+function callingSum (num1, num2) {
+  return sum.apply(this, arguments)
+}
+
+console.log(callingSum(11, 11))
+
+function callingSumUsingCall (num1, num2) {
+  return sum.call(this, num1, num2)
+}
+
+console.log(callingSumUsingCall(111, 111))
+
+window.color = 'red'
+var object = {color: 'blue'}
+
+function sayColorFunction () {
+  console.log(this.color)
+}
+
+var objSayColor = sayColorFunction.bind(object) // binds the function to another context (not global)
+
+objSayColor()
