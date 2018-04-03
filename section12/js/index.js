@@ -50,9 +50,11 @@ function Person (name, age, job) {
 var person3 = new Person('John', 25, 'CEO')
 console.log(person3)
 person3.sayName()
+console.log(JSON.stringify(person3)) // print object JSON
 
 // Prototype pattern
-console.log(Person.prototype.constructor)
+// all objects share the same attributes
+console.log(Person.prototype.constructor) // points to "Person"
 
 function NewPerson () {
   //
@@ -70,3 +72,51 @@ console.log(person4)
 person4.sayName()
 
 console.log(NewPerson.prototype.isPrototypeOf(person4))
+
+// keys
+var keys = Object.keys(NewPerson.prototype)
+console.log(keys)
+
+// can be done this way too
+NewPerson.prototype = {
+  name: 'John Doe',
+  age: 30,
+  sayName: function () {
+    console.log(this.name)
+  }
+}
+
+var person5 = new NewPerson()
+console.log(person5)
+
+/**
+* Combination of Constructor and Prototype pattern
+* most used nowdays
+* With this approach, each instance ends up with its own copy of
+* the instance properties
+* But they all share references to methods
+*/
+
+function Citizen (name, age, job) {
+  this.name = name
+  this.age = age
+  this.job = job
+  this.friends = ['Zen', 'Ram']
+}
+
+Citizen.prototype = {
+  constructor: Citizen,
+  sayName: function () {
+    console.log(this.name)
+  }
+}
+
+var citizen1 = new Citizen('Rick', 30, 'Web Developer')
+citizen1.friends.push('Shyam')
+citizen1.sayName()
+
+var citizen2 = new Citizen('Zen', 20, 'Doctor')
+citizen2.sayName()
+
+console.log(citizen1, citizen2)
+console.log(JSON.stringify(citizen1))
