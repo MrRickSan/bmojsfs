@@ -1,4 +1,5 @@
 /* global alert, prompt */
+/* eslint no-unused-vars: "error" */
 /*
  BOM - Browser Object Model
 
@@ -17,17 +18,17 @@ window object methods:
                        setTimeout()
 */
 
-var result = prompt('What is your name?')
-if (result) {
-  alert('welcome ' + result)
-}
+// var result = prompt('What is your name?')
+// if (result) {
+//   // alert('welcome ' + result)
+// }
 
 setTimeout(function () {
-  alert('hello world')
+  // alert('hello world')
 }, 3000) // execute after 3 seconds, once
 
 setInterval(function () {
-  alert('hello world')
+  // alert('hello world')
 }, 3000) // execute every 3 seconds
 
 /*
@@ -36,3 +37,27 @@ setInterval(function () {
  set attribute
  create element
 */
+
+document.write('Hello World writting in document')
+
+var div = document.getElementById('root')
+console.log(div.getAttribute('id'))
+div.setAttribute('id', 'hahaha')
+console.log(div.getAttribute('id'))
+
+function myClick () { // eslint-disable-line no-unused-vars
+  var div = document.createElement('h1')
+  var text = 'hello world'
+  var newH1 = document.body.appendChild(div)
+  newH1.innerText = text
+}
+
+/*
+ FINDING THE HTML ELEMENTS IN THE DOCUMENT OBJECT
+*/
+
+document.getElementById('root') // get by id
+document.getElementByClassName('intro') // class names
+document.getElementByTagName('p') // tags such as p or h1
+document.querySelectorAll('p.intro') // using css selectors
+document.getElementById('root').innerHTML = 'sdiuhiuasdhiuasduyfuya'
