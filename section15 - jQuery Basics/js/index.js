@@ -18,3 +18,8 @@ $(document).ready(function () {
   $('#target4').appendTo('.left')
   $('.left').clone().appendTo('.right')
 })
+
+// target parent
+// target child
+// target specific child
+// target even numbers
