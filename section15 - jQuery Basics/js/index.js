@@ -15,11 +15,10 @@ $(document).ready(function () {
   $('#title2').text('Learning <strong>jQuery</strong> is so much fun!')
   // $('#target5').remove()
   // $('#target5').removeClass()
-  $('#target4').appendTo('.left')
-  $('.left').clone().appendTo('.right')
+  // $('#target4').appendTo('.left')
+  // $('.left').clone().appendTo('.right')
+  $('.heading2').parent().css('backgroundColor', 'red') // target parent
+  $('.heading2Right').children().css('color', 'red') // target child
+  $('.target:nth-child(2)').addClass('swing') // target specific child
+  $('.target:odd').addClass('animated swing') // target even odd numbers
 })
-
-// target parent
-// target child
-// target specific child
-// target even numbers
