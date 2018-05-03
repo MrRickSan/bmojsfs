@@ -12,21 +12,21 @@
 * nested object
 */
 
-//pattern 1
-var person = new Object();
+// pattern 1
+var person = new Object() // eslint-disable-line
 
-person.name = "Ricardo";
-person.age = 30;
+person.name = 'Ricardo'
+person.age = 30
 
-console.log(person.name, person.age);
+console.log(person.name, person.age)
 
-//pattern 2
-var person = {
+// pattern 2
+var person = { // eslint-disable-line
   name: 'Ricardo',
   age: 30,
-  'my fav things': 'Movies', //not very usual or recommended
+  'my fav things': 'Movies', // not very usual or recommended
   sayName: function () {
-    return this.name;
+    return this.name
   },
   likes: {
     movies: {
@@ -35,19 +35,19 @@ var person = {
     },
     book: 'Learning JS'
   }
-};
+}
 
-person.name = 'Zen'; // change property value
-person.address = "Recife / PE" //add new property
+person.name = 'Zen' // change property value
+person.address = 'Recife / PE' // add new property
 
-console.log(person['name'], person.age, person['my fav things'], person.address); //brackets notation can also be
-console.log(person.sayName());
+console.log(person['name'], person.age, person['my fav things'], person.address) // brackets notation can also be used
+console.log(person.sayName())
 
-delete person.address; // delete property
-console.log(person.address);
+delete person.address // delete property
+console.log(person.address)
 
-console.log("Has this property? ", person.hasOwnProperty('age'));
-console.log("Has this property? ", person.hasOwnProperty('other'));
+console.log('Has this property? ', person.hasOwnProperty('age'))
+console.log('Has this property? ', person.hasOwnProperty('other'))
 
-console.log(person.likes);
-console.log(person.likes.movies);
+console.log(person.likes)
+console.log(person.likes.movies)
